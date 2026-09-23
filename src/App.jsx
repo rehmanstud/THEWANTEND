@@ -12,7 +12,7 @@ import "./App.css";
 import "./Shop.css";
 import CarEditorial from "./CarEditorial";
 import { MoneyFrame, Idea } from "./BrandPages";
-import Contact from "./Contact";
+import { openWhatsApp } from "./whatsapp";
 
 const PRODUCTS = [
   { id: "car", name: "Car Frame", price: 499, image: "/images/car-frame.jpg" },
@@ -22,8 +22,7 @@ const formatAED = (value) => `AED ${value.toLocaleString("en-AE")}`;
 
 function App() {
   const [panel, setPanel] = useState(null);
-  const [topic, setTopic] = useState("Contact");
-  function openContact(subject) { setTopic(subject); setPanel("contact"); }
+  const openContact = openWhatsApp;
   function addToBag(id) { changeQuantity(id, 1); setPanel("cart"); }
   const [cart, setCart] = useState(() => {
     try {
@@ -367,7 +366,7 @@ function App() {
         onClick={(event) => { if (event.target === event.currentTarget) setPanel(null); }}>
         <div className="shop-panel">
           <div className="shop-panel-header">
-            <h2 id="shop-panel-title">{selected?.name || ({ menu: "Menu", cart: "Your bag", about: "About THEWANTEND", contact: topic }[panel] || "THEWANTEND")}</h2>
+            <h2 id="shop-panel-title">{selected?.name || ({ menu: "Menu", cart: "Your bag", about: "About THEWANTEND" }[panel] || "THEWANTEND")}</h2>
             <button autoFocus className="shop-close" onClick={() => setPanel(null)} aria-label="Close dialog">×</button>
           </div>
 
@@ -414,7 +413,6 @@ function App() {
           </div>)}
 
           {panel === "about" && <div className="shop-copy"><p>MORE THAN OBJECTS.</p><p>Car Frame and Money Frame: different frames, same mindset.</p><button className="shop-primary" onClick={() => goTo("frames")}>Explore frames <ArrowRight size={18} /></button></div>}
-          {panel === "contact" && <Contact key={topic} topic={topic} items={topic === "Your bag" ? PRODUCTS.filter(item => cart[item.id] > 0).map(item => `${item.name} × ${cart[item.id]} — ${formatAED(item.price * cart[item.id])}`).join("\n") : ''} />}
         </div>
       </dialog>
     </main></MotionConfig>
