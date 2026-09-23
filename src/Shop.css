@@ -1,0 +1,35 @@
+/* Import after App.css. Existing page layout stays in App.css. */
+.shop-icon,.nav-action{appearance:none;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.shop-icon{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:36px}
+.nav-action{font-size:10px;font-weight:600;letter-spacing:.3em}
+.bag-count{position:absolute;right:-7px;top:-5px;min-width:18px;height:18px;padding:0 4px;border-radius:50%;background:#f7f3eb;color:#17130e;font-size:10px;display:grid;place-items:center;border:1px solid #17130e}
+.shop-dialog{position:fixed;inset:0;margin:auto;width:min(560px,calc(100% - 32px));max-height:88vh;max-height:88dvh;padding:0;border:1px solid #d7c9b4;background:#fbf5ea;color:#17130e;box-shadow:0 24px 80px #0005;overflow:auto}
+.shop-dialog::backdrop{background:rgba(20,16,11,.6);backdrop-filter:blur(5px)}
+.shop-panel{padding:28px}
+.shop-panel-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:20px;border-bottom:1px solid #17130e26;margin-bottom:22px}
+.shop-panel-header h2{font-family:Georgia,serif;font-weight:400;font-size:30px;line-height:1.15}
+.shop-close{flex-shrink:0;width:44px;height:44px;border:1px solid #17130e50;border-radius:50%;background:transparent;color:inherit;font-size:28px;cursor:pointer}
+.shop-panel button{font-family:inherit;cursor:pointer}
+.shop-primary,.shop-secondary{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:50px;padding:14px 18px;margin-top:18px;font-size:13px;border:1px solid #17130e}
+.shop-primary{background:#17130e;color:#fff8ee}
+.shop-secondary{background:transparent;color:#17130e}
+.shop-menu{display:grid;gap:4px}
+.shop-menu button{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;min-height:48px;border:0;border-bottom:1px solid #17130e26;background:none;color:inherit;font-size:20px;text-align:left}
+.shop-details>img{display:block;width:100%;max-height:38vh;object-fit:contain;margin:10px auto 24px}
+.shop-details>p,.shop-copy p{margin:14px 0;line-height:1.6}
+.shop-price{font-family:Georgia,serif;font-size:25px}
+.shop-muted{font-size:13px;line-height:1.6;color:#665c4d;margin:16px 0}
+.shop-empty{padding:24px 0;text-align:center;display:grid;justify-items:center;gap:20px}
+.shop-cart-item{display:grid;grid-template-columns:100px 1fr;gap:20px;align-items:start;padding:18px 0;border-bottom:1px solid #17130e26}
+.shop-cart-item>img{width:100%;height:120px;object-fit:contain}
+.shop-cart-item h3{font-size:16px;margin-bottom:8px}
+.shop-cart-item p{font-size:13px;line-height:1.5}
+.shop-quantity{display:inline-flex;align-items:center;border:1px solid #17130e50;margin:12px 0;gap:4px}
+.shop-quantity button{height:44px;width:44px;background:transparent;border:0;color:inherit;font-size:20px}
+.shop-quantity span{min-width:28px;text-align:center}
+.shop-remove{display:block;border:0;background:none;color:#665c4d;text-decoration:underline;font-size:12px;padding:8px 0}
+.shop-total{display:flex;justify-content:space-between;gap:16px;margin-top:24px;line-height:1.5}
+.shop-dialog button:disabled{opacity:.4;cursor:not-allowed}
+.shop-dialog button:focus-visible,.shop-icon:focus-visible,.nav-action:focus-visible{outline:2px solid #977140;outline-offset:4px}
+@media(max-width:480px){.shop-panel{padding:20px}.shop-panel-header h2{font-size:26px}.shop-cart-item{grid-template-columns:75px 1fr;gap:14px}.shop-total{font-size:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shop-dialog::backdrop{backdrop-filter:none}}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="280" viewBox="0 0 1600 280">
+<defs>
+ <linearGradient id="oak" x2="0" y2="1"><stop stop-color="#b99670"/><stop offset=".3" stop-color="#d1ad82"/><stop offset=".8" stop-color="#c5a078"/><stop offset="1" stop-color="#b88d61"/></linearGradient>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".008 .22" numOctaves="3" seed="14" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+ <linearGradient id="light"><stop stop-color="#fff4da" stop-opacity=".2"/><stop offset=".45" stop-color="#fff4da" stop-opacity=".04"/><stop offset="1" stop-color="#50351c" stop-opacity=".15"/></linearGradient>
+</defs>
+<path fill="url(#oak)" d="M0 0h1600v280H0z"/>
+<path fill="#c4a27b" opacity=".25" filter="url(#grain)" d="M0 0h1600v280H0z"/>
+<g fill="none" stroke="#77532f" stroke-width="1" opacity=".18">
+<path d="M-30 45Q240 26 420 47T800 39T1250 45T1640 35M-20 49Q240 30 420 51T800 43T1250 49T1640 39M-20 105Q230 115 500 95T960 109T1630 92M-20 111Q230 121 500 101T960 115T1630 98M-20 188Q220 155 490 179T970 171T1620 184M-20 194Q220 161 490 185T970 177T1620 190M-20 254Q360 225 710 245T1220 240T1640 252"/>
+</g><path fill="url(#light)" d="M0 0h1600v280H0z"/>
+</svg>
